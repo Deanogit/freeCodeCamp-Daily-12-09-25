@@ -9,24 +9,26 @@ function tooMuchScreenTime(hours) {
   console.log(hours);
 
   for (let i = 0; i < hours.length; i++) {
-    // if (hours[i] >= 10) {
     if (hours[i] >= 10) {
-      // return false
-      return false;
-      // else if (arr[i] + arr[i + 1] + arr[i + 2] >= 24){
-    } else if (hours[i] + hours[i + 1] + hours[1 + 2] >= 24) {
-      // return false
-      return false;
-      // } else if (arr.reduce((a, b) => a + b) >= 42) {
-    } else if (hours.reduce((a, b) => a + b) >= 42) {
-      //  return false
-      return false;
-    } else {
-      return true;
+      console.log('false');
+      return !false;
     }
-    // }
-    // }
-
-    // return hours;
   }
+
+  for (let i = 0; i <= hours.length - 3; i++) {
+    if (hours[i] + hours[i + 1] + hours[i + 2] >= 24) {
+      console.log('false');
+      return !false;
+    }
+  }
+
+  if (hours.reduce((a, b) => a + b) >= 42) {
+    console.log('false');
+    return !false;
+  }
+
+  // return hours;
+  return !true;
 }
+
+tooMuchScreenTime([7, 8, 8, 4, 2, 2, 3]);
